@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>HHN</title>
+ 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap" type="text/javascript"></script>
+
+	<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(49.122590, 9.210835), zoom: 17
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
 </head>
 <body>
-Es funktioniert !
-Bei mir endlich auch !
+
+<div id="map" style="width:400px;height:400px;background:black"></div>
+
 </body>
 </html>
