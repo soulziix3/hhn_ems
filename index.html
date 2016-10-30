@@ -13,6 +13,9 @@
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap" type="text/javascript"></script>
 
 	<script>
+    var markers = [];
+    var map;
+
 function myMap() {
 
     var location = new google.maps.LatLng(49.122590, 9.210835);
@@ -24,13 +27,129 @@ function myMap() {
         mapTypeId: google.maps.MapTypeId.SATELLITE
     }
 
-    var map = new google.maps.Map(mapCanvas, mapOptions);
+    map = new google.maps.Map(mapCanvas, mapOptions);
     var marker =  new google.maps.Marker({
             position: location,
             map: map
         });
 
+
+    var latLng1 = new google.maps.LatLng(49.12216902 , 9.211092);
+    var marker1 = new google.maps.Marker({
+                position: latLng1,
+                map: map,
+            });
+
+            markers[1] = marker1;
+
+            google.maps.event.addListener(marker1, 'click', function () {
+
+
+            });
+
+    var latLng2 = new google.maps.LatLng(49.12209881 , 9.21058774);
+    var marker2 = new google.maps.Marker({
+                position: latLng2,
+                map: map,
+            });
+
+            markers[2] = marker2;
+
+            google.maps.event.addListener(marker2, 'click', function () {
+
+
+            });
+
+    var latLng3 = new google.maps.LatLng(49.12266052 , 9.21009421);
+    var marker3 = new google.maps.Marker({
+                position: latLng3,
+                map: map,
+            });
+
+            markers[3] = marker3;
+
+            google.maps.event.addListener(marker3, 'click', function () {
+
+
+            });
+
+    var latLng4 = new google.maps.LatLng(49.12227434 , 9.21203613);
+    var marker4 = new google.maps.Marker({
+                position: latLng4,
+                map: map,
+            });
+
+            markers[4] = marker4;
+
+            google.maps.event.addListener(marker4, 'click', function () {
+
+
+            });
+
+    var latLng5 = new google.maps.LatLng(49.12285712 , 9.21137094);
+    var marker5 = new google.maps.Marker({
+                position: latLng5,
+                map: map,
+            });
+
+            markers[5] = marker5;
+
+            google.maps.event.addListener(marker5, 'click', function () {
+
+
+            });
+
+    var latLng6 = new google.maps.LatLng(49.1228501  , 9.21193957);
+    var marker6 = new google.maps.Marker({
+                position: latLng6,
+                map: map,
+            });
+
+            markers[6] = marker6;
+
+            google.maps.event.addListener(marker6, 'click', function () {
+
+
+            });
+
+    var latLng7 = new google.maps.LatLng(49.1230467  , 9.21048045);
+    var marker7 = new google.maps.Marker({
+                position: latLng7,
+                map: map,
+            });
+
+            markers[7] = marker7;
+
+            google.maps.event.addListener(marker7, 'click', function () {
+
+
+            });
+
+    var latLng8 = new google.maps.LatLng(49.12263244 , 9.20610309);
+    var marker8 = new google.maps.Marker({
+                position: latLng8,
+                map: map,
+            });
+
+            markers[8] = marker8;
+
+            google.maps.event.addListener(marker8, 'click', function () {
+
+
+            });
+
+
+
+
 }
+
+function dropdownChanged()
+        {
+            var index = document.getElementById("myList3").value;
+            var marker = markers[index];
+            var position = marker.getPosition();
+            map.setCenter(position);
+        }
 </script>
     <style>
         .navbar-brand {
@@ -107,9 +226,24 @@ function myMap() {
   </div>
 </nav>
 </nav>
-test
+
 <div id="map" style="width:100%;height:400px;background:black"></div>
 </div>
 
+
+<div>
+    <select id = "myList3" onchange="dropdownChanged();">
+               <option value = "0">Campus Sontheim</option>
+               <option value = "1">A Gebäude</option>
+               <option value = "2">B Gebäude</option>
+               <option value = "3">C Gebäude</option>
+               <option value = "4">D Gebäude</option>
+               <option value = "5">E Gebäude</option>
+               <option value = "6">F Gebäude</option>
+               <option value = "7">G Gebäude</option>
+               <option value = "8">Y Gebäude</option>
+
+    </select>
+</div>
 </body>
 </html>
