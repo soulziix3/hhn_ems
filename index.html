@@ -13,19 +13,6 @@
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap" type="text/javascript"></script>
 
 	<script>
-
-    var markers = [{},
-            {lat: 49.12216902, lng: 9.211092},
-            {lat: 49.12209881, lng: 9.21058774},
-            {lat: 49.12266052, lng: 9.21009421},
-            {lat: 49.12227434, lng: 9.21203613},
-            {lat: 49.12285712, lng: 9.21137094},
-            {lat: 49.1228501, lng: 9.21193957},
-            {lat: 49.1230467, lng: 9.21048045},
-            {lat: 49.12263244, lng: 9.20610309}];
-    var map;
-
-
 function myMap() {
 
     var location = new google.maps.LatLng(49.122590, 9.210835);
@@ -37,29 +24,13 @@ function myMap() {
         mapTypeId: google.maps.MapTypeId.SATELLITE
     }
 
-    map = new google.maps.Map(mapCanvas, mapOptions);
+    var map = new google.maps.Map(mapCanvas, mapOptions);
     var marker =  new google.maps.Marker({
             position: location,
-            map: map,
-            title: "Campus Sontheim",
-
+            map: map
         });
 
 }
-
-function dropdownChanged()
-        {
-            var index = document.getElementById("myList3").value;
-            var position = markers[index];
-            var marker1 = new google.maps.Marker({
-                       position: position,
-                       map: map,
-                       animation: google.maps.Animation.DROP
-                       });
-            map.setCenter(position);
-            map.setZoom(19);
-
-        }
 </script>
     <style>
         .navbar-brand {
@@ -136,24 +107,9 @@ function dropdownChanged()
   </div>
 </nav>
 </nav>
-
+test
 <div id="map" style="width:100%;height:400px;background:black"></div>
 </div>
 
-
-<div>
-    <select id = "myList3" onchange="dropdownChanged();">
-               <option value = "0">Campus Sontheim</option>
-               <option value = "1">A Gebäude</option>
-               <option value = "2">B Gebäude</option>
-               <option value = "3">C Gebäude</option>
-               <option value = "4">D Gebäude</option>
-               <option value = "5">E Gebäude</option>
-               <option value = "6">F Gebäude</option>
-               <option value = "7">G Gebäude</option>
-               <option value = "8">Y Gebäude</option>
-
-    </select>
-</div>
 </body>
 </html>
