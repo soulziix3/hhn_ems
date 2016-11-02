@@ -13,27 +13,79 @@
  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap" type="text/javascript"></script>
 
 	<script>
+
+var markers = [{lat: 49.12501264, lng: 9.20424968},
+    {lat: 49.12216902, lng: 9.211092},
+    {lat: 49.12209881, lng: 9.21058774},
+    {lat: 49.12266052, lng: 9.21009421},
+    {lat: 49.12227434, lng: 9.21203613},
+    {lat: 49.12285712, lng: 9.21137094},
+    {lat: 49.1228501, lng: 9.21193957},
+    {lat: 49.1230467, lng: 9.21048045},
+    {lat: 49.12263244, lng: 9.20610309}];
+
+gebaüde_list=[
+    "Campus Sontheim",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "Y"
+
+]
+
+
+var geocoder, directionsServices, directionsDisplay, gebaüde = [], map, marker;
+
 function myMap() {
-
-    var location = new google.maps.LatLng(49.122590, 9.210835);
-
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-        center: location,
-        zoom: 17,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+    if (marker) {
+        marker.setMap(null);
     }
 
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    var marker =  new google.maps.Marker({
-            position: location,
-            map: map
+    var index = document.getElementById("myList3").value;
+    if (index > 0) {
+
+        var position = markers[index];
+        console.log(index);
+        var g = gebaüde_list[index]
+
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: g,
         });
 
+        map.setCenter(position);
+        map.setZoom(19);
+    } else {
+        var location = new google.maps.LatLng(49.122590, 9.210835);
+
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+            center: location,
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Campus Sontheim"
+        });
+
+    }
+
 }
+
 </script>
     <style>
-        .navbar-brand {
+
+    .navbar-brand {
   padding: 5px;
 }
 .navbar-brand>img {
@@ -41,9 +93,8 @@ function myMap() {
   padding: 3px;
   width: auto;
 }
-    </style>
-    <style>
-      .thumb-dropdown .dropdown-menu > li {
+
+    .thumb-dropdown .dropdown-menu > li {
     position: relative;
 }
 .thumb-dropdown .dropdown-menu > li > a .thumbnail {
@@ -58,7 +109,8 @@ function myMap() {
 .thumb-dropdown .dropdown-menu > li > a:hover .thumbnail  {
     display: block;
 }
-    </style>
+</style>
+
 </head>
 <body>
 
@@ -100,13 +152,28 @@ function myMap() {
             <li><a href="https://www.hs-heilbronn.de/hochschulkommunikation">Kommunikation und Marketing</a></li>
          </ul>
       </li>
-     </li>
-    </ul>
-   </div>
-  </div>
-</nav>
-</nav>
-test
+             <li>
+                            <div>
+                                <select id="myList3" onchange="myMap();">
+                                    <option value="0">Campus Sontheim</option>
+                                    <option value="1">A Gebäude</option>
+                                    <option value="2">B Gebäude</option>
+                                    <option value="3">C Gebäude</option>
+                                    <option value="4">D Gebäude</option>
+                                    <option value="5">E Gebäude</option>
+                                    <option value="6">F Gebäude</option>
+                                    <option value="7">G Gebäude</option>
+                                    <option value="8">Y Gebäude</option>
+                                </select>
+                            </div>
+                        </li>
+                        </li>
+                    </ul>
+                 </div>
+              </div>
+           </nav>
+        </nav>
+
 <div id="map" style="width:100%;height:400px;background:black"></div>
 </div>
 
