@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Bootstrap Case</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <meta charset="UTF-8">
     <title>HHN</title>
- 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap" type="text/javascript"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGwKBRJbGoXguFZ7aWuPLobe_Xw1wdgOY&callback=myMap"
+            type="text/javascript">
+    </script>
 
-	<script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 
-var markers = [{lat: 49.12501264, lng: 9.20424968},
+    <script>
+        var markers = [{lat: 49.12501264, lng: 9.20424968},
     {lat: 49.12216902, lng: 9.211092},
     {lat: 49.12209881, lng: 9.21058774},
     {lat: 49.12266052, lng: 9.21009421},
@@ -26,14 +32,14 @@ var markers = [{lat: 49.12501264, lng: 9.20424968},
 
 gebaüde_list=[
     "Campus Sontheim",
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "Y"
+    "A Gebaüde",
+    "B Gebaüde",
+    "C Gebaüde",
+    "D Gebaüde",
+    "E Gebaüde",
+    "F Gebaüde",
+    "G Gebaüde",
+    "Y Gebaüde"
 
 ]
 
@@ -71,32 +77,33 @@ function myMap() {
             mapTypeId: google.maps.MapTypeId.SATELLITE
         }
 
-        var map = new google.maps.Map(mapCanvas, mapOptions);
+        map = new google.maps.Map(mapCanvas, mapOptions);
         marker = new google.maps.Marker({
             position: location,
             map: map,
-            title: "Campus Sontheim"
-        });
+            title: "Campus Sontheim",
 
+        });
     }
 
+
+}
+    </script>
+      <style>
+          .navbar-brand {
+    padding: 5px;
 }
 
-</script>
-    <style>
-
-    .navbar-brand {
-  padding: 5px;
-}
-.navbar-brand>img {
-  height: 100%;
-  padding: 3px;
-  width: auto;
+.navbar-brand > img {
+    height: 100%;
+    padding: 3px;
+    width: auto;
 }
 
-    .thumb-dropdown .dropdown-menu > li {
+.thumb-dropdown .dropdown-menu > li {
     position: relative;
 }
+
 .thumb-dropdown .dropdown-menu > li > a .thumbnail {
     position: absolute;
     left: 100%;
@@ -106,62 +113,86 @@ function myMap() {
     height: auto;
     margin-left: 5px;
 }
-.thumb-dropdown .dropdown-menu > li > a:hover .thumbnail  {
+
+.thumb-dropdown .dropdown-menu > li > a:hover .thumbnail {
     display: block;
 }
-</style>
+
+      </style>
 
 </head>
+
 <body>
 
 <div class="container">
-  <nav  class="navbar navbar-inverse navbar-static-top navbar-default" role="navigation">
-    <div class="container-fluid">
-     <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle ="collapse" data-target = "#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigaton</span>
-            <span class ="icon-bar"></span>
-            <span class ="icon-bar"></span>
-            <span class ="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" href="https://www.hs-heilbronn.de"><img alt="Brand" src="https://www.hs-heilbronn.de/905164/hochschule-heilbronn-cmyk.jpg"/></a>
-         </div>
-         <div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav">
-         <li class="dropdown thumb-dropdown">
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ich gehöre zu...<span class="caret"></span></a>
-         <ul class="dropdown-menu">
-             <li><a href="https://www.hs-heilbronn.de/studieninteressierte">Studieninteressierte</a></li>
-         </ul>
-         </li>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Die Hochschule<span class="caret"></span></a>
-         <ul class="dropdown-menu">
-              <li><a href="https://www.hs-heilbronn.de/281275/hochschule-heilbronn">Hochschule Heilbronn</a></li>
-         </ul>
-         </li>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forschung<span class="caret"></span></a>
-         <ul class="dropdown-menu">
-            <li><a href="https://www.hs-heilbronn.de/forschung">Forschung</a></li>
-         </ul>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Internationales<span class="caret"></span></a>
-         <ul class="dropdown-menu">
-            <li><a href="https://www.hs-heilbronn.de/internationales">International Office</a></li>
-         </ul>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Öffentlichkeit<span class="caret"></span></a>
-         <ul class="dropdown-menu">
-            <li><a href="https://www.hs-heilbronn.de/hochschulkommunikation">Kommunikation und Marketing</a></li>
-         </ul>
-      </li>
-             <li>
-             </li>
-         </ul>
-         </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-autocollapse navbar-static-top navbar-default">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#dropdown-thumbnail-preview">
+                        <span class="sr-only">Toggle navigaton</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="dropdown-thumbnail-preview" class="collapse navbar-collapse">
+                        <a class="navbar-brand" href="https://www.hs-heilbronn.de"><img alt="Brand"
+                                                                                        src="https://www.hs-heilbronn.de/905164/hochschule-heilbronn-cmyk.jpg"/></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown thumb-dropdown">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ich gehöre zu...<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/studieninteressierte">Studieninteressierte</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Die
+                            Hochschule<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/281275/hochschule-heilbronn">Hochschule
+                                    Heilbronn</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forschung<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/forschung">Forschung</a></li>
+                            </ul>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                href="#">Internationales<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/internationales">International Office</a></li>
+                            </ul>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                href="#">Öffentlichkeit<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/hochschulkommunikation">Kommunikation und
+                                    Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                                href="#">Öffentlichkeit<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://www.hs-heilbronn.de/hochschulkommunikation">Kommunikation und
+                                    Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li>
+
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </nav>
 
-<div id="map" style="width:100%;height:400px;background:black"></div>
+    <div id="map" style="width:100%;height:400px;background:black"></div>
 </div>
+
 
 
 <div>
