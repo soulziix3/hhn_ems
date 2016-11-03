@@ -8,7 +8,7 @@ var markers = [{lat: 49.12501264, lng: 9.20424968},
     {lat: 49.1230467, lng: 9.21048045},
     {lat: 49.12263244, lng: 9.20610309}];
 
-gebaüde_list=[
+gebäude_list=[
     "Campus Sontheim",
     "A",
     "B",
@@ -20,7 +20,6 @@ gebaüde_list=[
     "Y"
 
 ]
-
 
 var geocoder, directionsServices, directionsDisplay, gebaüde = [], map, marker;
 
@@ -34,7 +33,7 @@ function myMap() {
 
         var position = markers[index];
         console.log(index);
-        var g = gebaüde_list[index]
+        var g = gebäude_list[index]
 
         marker = new google.maps.Marker({
             position: position,
@@ -60,7 +59,6 @@ function myMap() {
             position: location,
             map: map,
             title: "Campus Sontheim",
-
         });
     }
 
