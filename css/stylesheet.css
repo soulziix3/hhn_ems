@@ -26,3 +26,28 @@
 .thumb-dropdown .dropdown-menu > li > a:hover .thumbnail {
     display: block;
 }
+
+/* Laptop */
+@media only screen and (max-width : 1200px) {
+
+    }
+/* iPad Querformat */
+@media only screen and (max-width : 1024px) {
+
+    }
+/* iPad Hochformat */
+@media only screen and (max-width : 768px) {
+
+    }
+/* Kleines Tablet Querformat */
+@media only screen and (max-width : 649px) {
+
+    }
+/* iPhone Querformat */
+@media only screen and (max-width : 480px) {
+
+    }
+/* iPhone Hochformat */
+@media only screen and (max-width : 320px) {
+
+    }
